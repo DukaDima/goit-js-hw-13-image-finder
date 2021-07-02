@@ -1,0 +1,298 @@
+
+
+.products {
+    background-color: var(--primary-background-color);
+}
+
+.icon-arrow-right {
+    width: 14px;
+    height: 14px;
+    fill: var(--title-text-color);
+}
+
+
+.products-list {
+    display: flex;
+    flex-direction: column;
+}
+.products-item {
+    width: 100%;
+    padding: 0 42px;
+    border-radius: 24px;
+
+}
+.products-item+.products-item {
+    margin-top: 130px;
+}
+
+.ice-cream {
+    position: relative;
+    background-color: var(--ice-cream-color);  
+}
+.ice-cream::before {
+    position: absolute;
+    content: "";
+    background-repeat: no-repeat;
+    left: 20px;
+    top: -110px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/Products/ice-cream-mobile.png) ;
+    background-size: 252px 249px;
+
+}
+
+.ice-coffee {
+    background-color: var(--ice-coffee-color);
+}
+.ice-coffee::before {
+    position: absolute;
+    content: "";
+    background-repeat: no-repeat;
+    left: 20px;
+    top: -110px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/Products/ice-coffee-mobile.png) ;
+    background-size: 252px 249px;
+
+}
+
+.milkshakes {
+    background-color: var(--milkshakes-color);
+}
+
+.milkshakes::before {
+    position: absolute;
+    content: "";
+    background-repeat: no-repeat;
+    left: 20px;
+    top: -110px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/Products/milkshakes-mobile.png) ;
+    background-size: 252px 249px;
+
+}
+
+.products-title {
+    text-align: center;
+    font-family: var(--primary-font);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    
+}
+.natural {
+    @include font(18px, 700, 21px);
+    color: var(--product-text-color);
+    letter-spacing: 0.04;
+    margin-bottom: 15px
+}
+.name {
+    @include font(34px, 700, 39px);    
+    color: var(--title-text-color);  
+    margin-bottom: 144px;
+    
+}
+
+.products-name {
+    @include font(20px, 400, 23px);
+    color: var(--secondary-text-color);
+    margin-bottom: 30px;
+    margin-top: 144px;
+}
+
+.product-text {
+     
+    @include font(14px, 700, 22px);
+    letter-spacing: 0.04;
+    text-align: center;
+    color: var(--secondary-text-color);
+}
+.product-text::before {
+    display: block;
+            content: "";
+            height: 6px;
+            margin-bottom: 30px;
+            background-size: 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(../images/icon-png/points.png);
+}
+.products-cards {
+    // display: flex;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.products-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 30px 0 40px 0;
+}
+
+@media screen and (min-width: 320px) {
+    .container {
+        width: 320px;
+      
+    }
+    .products {
+        padding: 120px 0 98px;
+    }
+
+ 
+}
+
+.arrow-link {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+        padding: 0 34px;
+      
+    }
+    .products-list {
+       
+        flex-direction: row;
+    }
+    .products-item+.products-item {
+        margin-top: 0;
+        margin-left: 20px;
+    }
+
+    .ice-cream::before {
+        // position: absolute;
+        // content: "";
+        // background-repeat: no-repeat;
+        left: 0px;
+        top: -104px;
+        // width: 100%;
+        // height: 100%;
+        background-image: url(../images/Products/ice-cream-tablet.png);
+        background-size: 220px 226px;
+    
+    }
+
+    .ice-coffee::before {
+        // position: absolute;
+        // content: "";
+        // background-repeat: no-repeat;
+        left: 0px;
+        top: -104px;
+        // width: 100%;
+        // height: 100%;
+        background-image: url(../images/Products/ice-coffee-tablet.png);
+        background-size: 220px 226px;
+    
+    }
+
+    .milkshakes::before {
+        // position: absolute;
+        // content: "";
+        // background-repeat: no-repeat;
+        left: 0px;
+        top: -104px;
+        // width: 100%;
+        // height: 100%;
+        background-image: url(../images/Products/milkshakes-tablet.png);
+        background-size: 220px 226px;
+    
+    }
+
+
+
+
+    .natural {
+        @include font(26px, 700, 30px);
+    }
+    .name {
+        @include font(48px, 700, 55px);
+        margin-bottom: 150px;
+    }
+
+    // .products {
+    //     padding: 120px 0 98px;
+    // }
+
+ 
+}
+
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1200px;
+        padding: 0 114px;
+      
+    }
+    .products-item+.products-item {
+        margin-top: 0;
+        margin-left: 30px;
+    }
+
+    .ice-cream::before {
+        // position: absolute;
+        // content: "";
+        // background-repeat: no-repeat;
+        // left: -10px;
+        top: -200px;
+        // width: 100%;
+        // height: 100%;
+        background-image: url(../images/Products/ice-cream-desktop.png);
+        background-size: 318px 320px;
+    
+    }
+
+    .ice-coffee::before {
+        // position: absolute;
+        // content: "";
+        // background-repeat: no-repeat;
+        // left: -0px;
+        top: -200px;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/Products/ice-coffee-desktop.png);
+        background-size: 318px 320px;
+    
+    }
+
+    .milkshakes::before {
+        // position: absolute;
+        // content: "";
+        // background-repeat: no-repeat;
+        // left: -10px;
+        top: -200px;
+        // width: 100%;
+        // height: 100%;
+        background-image: url(../images/Products/milkshakes-desktop.png);
+        background-size: 318px 320px;
+    
+    }
+
+    .natural {
+        @include font(30px, 700, 34px);
+    }
+
+    .name {
+        @include font(58px, 700, 66px);
+        margin-bottom: 270px;
+    }
+    .products-name {
+        @include font(30px, 400, 34px);
+    }
+
+    .product-text {
+     
+        @include font(16px, 700, 28px);
+    }
+}

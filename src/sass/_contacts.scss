@@ -1,0 +1,333 @@
+.contacts {
+    background-color: var(--secondary-background-color);
+    padding: 50px 0 112px 0;
+}
+
+
+.contacts-buttons-list {   
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contacts-buttons-item+.contacts-buttons-item {
+    margin-top: 10px;
+}
+
+.icon-vector {
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+    fill: var(--secondary-text-color);
+}
+.franchise .icon-vector {
+    fill: var(--title-text-color);
+}
+
+.contacts-container {
+    position: relative;
+    padding-bottom: 1340px;
+}
+
+.contacts-list {
+    position: absolute;
+    top: -140px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.locations,
+.franchise {
+    margin: 0 auto;
+    width: 160px;
+    height: 44px;
+    border-radius: 22px;
+    padding: 20px 16px ;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.locations {
+    @include font(16px, 700, 21px);
+    justify-content: center;
+    color: var(--secondary-text-color);
+    background-color: var(--title-text-color);
+}
+
+.locations:hover,
+.locations:focus {
+    background-color: var(--button-hover-primary);
+}
+
+.franchise {
+    @include font(16px, 700, 21px);
+    color: var(--title-text-color);
+    background-color: var( --primary-background-color);
+    justify-content: center;
+}
+
+.franchise:hover,
+.franchise:focus {
+    background-color: var(--button-hover-secondary);
+}
+
+.contacts-cards {
+    display: block;
+    width: 100%;
+    padding: 44px 20px;
+    @include font(12px, 500, 22px);
+    background-color: var(--primary-background-color);
+    box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.1);
+    border-radius: 24px;
+}
+
+.contacts-cards+.contacts-cards {
+    margin-top: 20px;
+}
+
+.title-cards {
+    display: inline-block;
+    margin-bottom: 26px;
+    padding: 0 30px;
+    
+    color: var(--secondary-text-color);
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.cafe {
+    background-color: var(--ice-coffee-color);
+}
+
+.food-truck {
+    background-color: var(--milkshakes-color);
+}
+
+.contacts-city,
+.contacts-opening-day {   
+    @include font(14px, 500, 22px);
+    color: var(--dark-text-color);
+}
+.contacts-city {
+    margin-bottom: 12px;
+}
+
+.contacts-text,
+.contacts-address-item {   
+    color: var(--gray-text-color);
+}
+.contacts-text {
+    position: relative;
+    margin-bottom: 50px;
+}
+.contacts-text::after {
+    content: "";
+    position: absolute;
+    top: 65px;
+    left: 0;
+    
+    height: 1px;
+    width: 100%;
+    
+    background: #E1E1E1;
+}
+
+.products-opening-hours {
+    color: var(--product-text-color);
+}
+.contacts-schedule {
+    position: relative;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.contacts-schedule::after {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    content: "";
+    height: 1px;
+    width: 100%;
+    
+    background: #E1E1E1;
+
+}
+
+.contacts-schedule-item+.contacts-schedule-item {
+    margin-top: 20px;
+}
+.contacts-address-list {
+    margin-top: 25px;
+}
+
+
+
+@media screen and (min-width: 320px) {
+    .container {
+        width: 320px;     
+    }
+
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+        padding: 0 34px;
+      
+    }
+
+    .contacts {
+       
+        padding: 50px 0 158px 0;
+    }
+    .contacts-container {
+        padding-bottom: 500px;
+    }
+
+    .contacts-cards {
+        
+        padding: 50px 30px;
+    }
+
+    .contacts-buttons-list {
+        
+        flex-direction: row;
+        width: 100%;
+        // margin-top: 81px;
+        justify-content: center;
+    }
+
+    .contacts-buttons-item+.contacts-buttons-item {
+        margin-top: 0;
+        margin-left: 20px;
+    }
+
+    .contacts-list {
+        flex-direction: row;
+        top: -130px;
+    }
+
+    .contacts-cards+.contacts-cards {
+        margin-top: 0;
+        margin-left: 20px;
+    }
+
+
+    .title-cards {
+        @include font(16px, 500, 30px);
+        padding: 0 16px;
+        border-radius: 6px
+
+    }
+
+    .contacts-city,
+    .contacts-opening-day,
+    .contacts-address-item {   
+        @include font(14px, 500, 26px);
+    }
+
+    .contacts-text {
+        margin-bottom: 60px;
+        @include font(14px, 500, 23px);
+    }
+    .contacts-text::after {
+        top: 100px;
+    }
+
+
+    .contacts-schedule {
+        margin-bottom: 60px;
+    }
+
+    .contacts-schedule::after {
+        bottom: -30px;
+    }
+
+
+    .contacts-schedule-item+.contacts-schedule-item {
+        margin-top: 30px;
+    }
+    .contacts-address-list {
+        margin-top: 30px;
+    }
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1200px;
+        padding: 0 114px;     
+    }
+    .contacts {
+       
+        padding-bottom: 165px;
+    }
+
+    .contacts-list {
+        position: static;
+        // top: 0;
+        margin-bottom: 86px;
+    }
+    .contacts-container {
+        padding-bottom: 0;
+    }
+    .overlay {
+        // height: 500px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    
+        background-image: 
+                            url(../images/backcround-images/ellipse111-desktop.png);
+    
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (-webkit-min-device-pixel-ratio: 2),
+    screen and (-o-min-device-pixel-ratio: 2/1),
+    screen and (min-resolution: 1920dpi),
+    screen and (min-resolution: 2dppx) {
+    .overlay {
+      background-image:
+       url(../images/backcround-images/ellipse111-desktop@2x.png);
+      }
+    }
+
+
+
+    .contacts-cards+.contacts-cards {
+        margin-top: 0;
+        margin-left: 30px;
+    }
+
+    .contacts-cards {       
+        padding: 52px 44px;
+    }
+
+    .contacts-text {
+        margin-bottom: 64px;
+        @include font(16px, 500, 29px);
+    }
+    .contacts-text::after {
+        top: 116px;
+    }
+
+    .contacts-schedule {
+        margin-bottom: 64px;
+    }
+    .contacts-schedule::after {
+        bottom: -32px;
+    }
+    
+    .contacts-schedule-item+.contacts-schedule-item {
+        margin-top: 32px;
+    }
+    .contacts-address-list {
+        margin-top: 32px;
+    }
+}

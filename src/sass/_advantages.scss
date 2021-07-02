@@ -1,0 +1,130 @@
+.advantages {
+  @media screen and (max-width: 1199px) {
+    background-color: var(--secondary-background-color);
+  }
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+  }
+}
+
+.advantages-item {
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    width: 230px;
+    height: 156px;
+    padding-top: 68px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: 180px;
+    height: 222px;
+    padding-top: 88px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 300px;
+    height: 222px;
+    padding-top: 90px;
+  }
+
+  & h3 {
+    font-family: titan one;
+    letter-spacing: 0.04em;
+    color: var(--title-text-color);
+
+    @media screen and (max-width: 767px) {
+      @include font(36px, 400, 41px);
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      @include font(48px, 400, 55px);
+      margin-bottom: 13px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      @include font(58px, 400, 66px);
+      margin-bottom: 15px;
+    }
+  }
+
+  & p {
+    font-family: dm sans;
+    letter-spacing: 0.02em;
+    color: var(--dark-text-color);
+
+    @media screen and (max-width: 767px) {
+      @include font(12px, 700, 20px);
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      @include font(14px, 700, 24px);
+    }
+
+    @media screen and (min-width: 1200px) {
+      @include font(16px, 700, 28px);
+    }
+  }
+
+  & + & {
+    @media screen and (max-width: 767px) {
+      margin-top: 16px;
+    }
+  }
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 33px;
+  height: 50px;
+  background-image: url(../images/icon-png/advantages1.png);
+}
+
+.apple::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/icon-png/advantages2.png);
+}
+
+.candy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 50px;
+  background-image: url(../images/icon-png/advantages3.png);
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (-o-min-device-pixel-ratio: 2/1),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .glass::before {
+    background-image: url(../images/icon-png/advantages1@2x.png);
+    background-size: contain;
+  }
+  .apple::before {
+    background-image: url(../images/icon-png/advantages2@2x.png);
+    background-size: contain;
+  }
+  .candy::before {
+    background-image: url(../images/icon-png/advantages3@2x.png);
+    background-size: contain;
+  }
+}

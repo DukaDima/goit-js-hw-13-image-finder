@@ -1,0 +1,239 @@
+.about {
+  background-color: var(--secondary-background-color);
+  padding-top: 130px;
+  padding-bottom: 39px;
+  background-repeat: no-repeat;
+  @media screen and (min-width: 320px) {
+    width: 100%;
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-image: url('../images/backcround-images/milkbg-mobail.png');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192 dpi),
+      screen and (min-resolution: 2px) {
+      .text-second {
+        background-image: url('../images/backcround-images/milkbg-mobail@2x.png');
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    background-size: contain;
+    background-image: url('../images/backcround-images/milkbg-mobail.png');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192 dpi),
+      screen and (min-resolution: 2px) {
+      .text-second {
+        background-image: url('../images/backcround-images/milkbg-mobail@2x.png');
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    background-image: none;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 100%;
+    background-color: var(--primary-background-color);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: url('../images/backcround-images/milkbg-desktop.png');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192 dpi),
+      screen and (min-resolution: 2px) {
+      .about {
+        background-image: url('../images/backcround-images/milkbg-desktop@2x.png');
+      }
+    }
+  }
+  @media screen and (min-width: 1600px) {
+    width: 100%;
+    background-color: var(--primary-background-color);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: url('../images/backcround-images/milkbg-desktop.png');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192 dpi),
+      screen and (min-resolution: 2px) {
+      .about {
+        background-image: url('../images/backcround-images/milkbg-desktop@2x.png');
+      }
+    }
+  }
+}
+.about-slogan {
+  font-family: Titan One;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.167;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--product-text-color);
+  margin-bottom: 15px;
+  @media screen and (min-width: 768px) {
+    font-size: 26px;
+    line-height: 1.154;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 30px;
+    line-height: 1.133;
+  }
+}
+.about-title {
+  font-family: Titan One;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.147;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--title-text-color);
+  margin-bottom: 25px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 48px;
+    line-height: 1.146;
+    margin-bottom: 0px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 58px;
+    line-height: 1.138;
+  }
+}
+.about-item {
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+.left-side {
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+.photo {
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    margin-top: 55px;
+  }
+}
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+    margin-top: 100px;
+  }
+}
+.text-first {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.62;
+  letter-spacing: 0.04em;
+  color: var(--dark-text-color);
+  width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45px;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.76;
+    width: 340px;
+    margin-top: 0px;
+    margin-left: 17px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+    line-height: 1.76;
+    min-width: 463px;
+    margin-left: 74px;
+  }
+}
+.text-second {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.62;
+  color: var(--gray-text-color);
+  margin-top: 30px;
+  width: 220px;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (min-width: 768px) {
+    background-image: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.76;
+    letter-spacing: 0.04em;
+    width: 340px;
+    margin-left: 17px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.94;
+    min-width: 463px;
+    margin-left: 74px;
+  }
+}
+.paragraph {
+  display: block;
+  margin-top: 20px;
+  margin-left: 0px;
+  background-image: none;
+}
+.btn-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 17px;
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin-left: 17px;
+    align-self: start;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: 74px;
+    margin-top: 35px;
+  }
+}
+.about-btn {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.286;
+  border: none;
+  width: 175px;
+  height: 44px;
+  border-radius: 22px;
+  padding: 12px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--secondary-text-color);
+  color: var(--title-text-color);
+  transition: background-color var(--time-animation),
+    color var(--time-animation);
+  &:hover,
+  &:focus {
+    background-color: var(--button-hover-primary);
+    color: var(--secondary-text-color);
+  }
+  &:hover .about-icon,
+  &:focus .about-icon {
+    fill: var(--secondary-text-color);
+  }
+  @media screen and (min-width: 768px) {
+    padding: 10px 32px;
+    font-size: 16px;
+    line-height: 1.302;
+  }
+}
+.about-icon {
+  fill: var(--title-text-color);
+  width: 12px;
+  height: 12px;
+  transition: fill var(--time-animation);
+}
