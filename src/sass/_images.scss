@@ -1,10 +1,59 @@
-.country-body {
-  display: flex;
-  justify-content: center;
+.images-body {
   padding: 60px;
   background-color: cornflowerblue;
-  background-image: url(../images/un-office.jpeg);
 }
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.image-form {
+  display: inline-block;
+}
+.images-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 360px;
+  height: 340px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: bisque;
+  border-radius: 8px;
+}
+.card-images {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.load-more-button,
+.search-button {
+  background-color: rgb(149, 186, 228);
+  color: azure;
+  font-size: 26px;
+  font-weight: 900;
+  border-radius: 6px;
+}
+
+.load-more-button:hover,
+.load-more-button:focus,
+.search-button:hover,
+.search-button:focus {
+  background-color: blue;
+  cursor: pointer;
+}
+
 .country-content {
   text-align: center;
 }
@@ -19,13 +68,14 @@
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.input {
-  width: 400px;
+.search-form {
+  width: 450px;
   font-size: 26px;
   line-height: 1.25;
   font-weight: 700;
   letter-spacing: 0.03em;
   margin-bottom: 20px;
+  padding: 10px;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 6px;
