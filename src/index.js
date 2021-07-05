@@ -1,126 +1,60 @@
 // список импорта------------------------------
+import 'regenerator-runtime/runtime'
 import './sass/main.scss';
-import fetchCountries from './fetchCountries.js';
-import { alert, defaultModules } from '../node_modules/@pnotify/core';
-import countryOne from './templates/country.hbs';
-import countryList from './templates/countryList.hbs'
-import '@pnotify/core/dist/PNotify.css';
-import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
-import '@pnotify/mobile/dist/PNotifyMobile.css';
-import '@pnotify/core/dist/BrightTheme.css';
-  defaultModules.set(PNotifyMobile, {});
 
-// ссылки на разметку------------------------------
+import { fetchImages } from './apiService.js'
+import imagesList from './templates/imagesList.hbs'
+import ImagesService from './apiService.js'
+import { readFileSync } from 'fs';
+
+const imageFetcher = new ImagesService();
+
 const refs = {
-    input: document.querySelector('input'),
-    body: document.querySelector('body'),
-    country: document.getElementById('container'),
-    reset: document.getElementById('reset-button')
+    wrapper: document.querySelector('.wrapper'),
+    searchForm: document.getElementById('search-form'),
+    loadMoreBtn: document.querySelector('.load-more-button')
+
+}
+console.log(refs.loadMoreBtn)
+console.log(refs.searchForm)
+
+refs.searchForm.addEventListener('submit', onSubmit);
+refs.loadMoreBtn.addEventListener('click', onLoadMore)
+
+let searchQuery =''
+let pageCounter = 1;
+
+async function onSubmit(element) {
+    element.preventDefault();
+
+    searchQuery = element.currentTarget.elements.query.value || '';
+
+    if (!searchQuery) {
+      clearGallery()
+     return
+    }
+   
+    pageCounter = 1;
+    let resultList = await imageFetcher.fetchImages(searchQuery, pageCounter);
+    clearGallery ()
+    renderGallery(resultList)
 
 }
 
-const debounce = require('lodash.debounce');
-
-let searchQuery = ''
-
-refs.input.addEventListener('input', debounce(onInput, 500))
-
-
- function onInput() {
-
-    searchQuery = refs.input.value;
-
-    fetchCountries(searchQuery)
-        .then(onResponse)
+function clearGallery() {
+      refs.wrapper.innerHTML =''
+ }
+function renderGallery(data) {
+    const imagesGallery = imagesList(data)
     
+    refs.wrapper.insertAdjacentHTML('beforeend', imagesGallery)
+    console.log(imagesGallery)
 }
-// вібор страны по клику из списка------------
 
-refs.country.addEventListener('click', onButtonClick)
- 
-function onButtonClick(event) {
-     event.preventDefault();
-    searchQuery = `${event.target.textContent}`
-    fetchCountries(searchQuery)
-    .then(onResponse);
+async function onLoadMore() {
+    pageCounter += 1;
+    let resultList = await imageFetcher.fetchImages(searchQuery, pageCounter)
     
-}
-refs.reset.addEventListener('click', onResetClick);
-function onResetClick(event) {
-    event.preventDefault();
-    clearContent()
-    refs.input.value=''
-
-
-}
-//  1. вывести результат одной страницы
-
-//  2. вывести результат список стран от 2 до 10 штук
-
-//  3. если стран больше 10 - вывести "уточните параметры запроса"
-
-// проверка на количество стран в промисе------------------------------
-function onResponse (countries){
-    if (countries.length > 10) {
-        renderClarifyMessage(countries)
-       
-    } else if (countries.length >= 2 && countries.length <= 10) {
-        renderCountriesMany(countries)
-       
-    } else if (countries.length===1){
-        renderCountry(countries)
-       
-    } else {
-        renderDefaultMessage()
-        
-  }
-}
-// если больше 10 стран-----------------------------
-function renderClarifyMessage(countries) {
-// message
-    clearContent()
-
-    alert({
-    type: 'info',
-        text: 'Уточните название страны!',
-        delay: 2000,
-        title: 'ПРИВЕТ'
-     });
-    console.log('renderClarifyMessage')
-    console.log(countries)
-}
-
-// если от 2х до 10ти стран------------------------------
-function renderCountriesMany(countries) {
-    clearContent()
-    // вывести список стран
-    refs.country.insertAdjacentHTML ('beforeend', countryList(countries))
-    console.log('renderCountriesMany')
+    renderGallery(resultList)
     
-}
-// если одна страна------------------------------
-function renderCountry(countries) {
-    clearContent()
-     // вывести карточку страны
- 
-    refs.country.insertAdjacentHTML('beforeend', countryOne(countries))
-    console.log(countries)
-}
-// //если ни одной страны---------------------------------
-// error message
-function renderDefaultMessage() {
-    clearContent()
-    alert({
-    type: 'error',
-        text: 'Такой страны не существует!',
-        delay: 2000,
-        title: 'ИЗВИНИTE'
-     });
-    console.log('Такой страны не существует, уточните поиск')
-    
-}
-//функция очистки контента-----------------------------
-
-function clearContent() {
-    refs.country.innerHTML=''
 }

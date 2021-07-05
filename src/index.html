@@ -8,6 +8,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" 
+      rel="stylesheet" 
+    />
+
     <head>
       <link
         rel="shortcut icon"
@@ -16,22 +20,23 @@
       />
     </head>
   </head>
-  <body class="country-body">
+  <body>
 
-    <div class="country-content">
-          <h1 class="country-title">ПОИСК </h1>
-          <div class="country-menu">
-          <input class="input" placeholder="введите название страны" type="text">
-          <button type="button" id="reset-button" class="reset-button-style" >RESET</button>
-     </div>
-     <div id="container">
-  <!-- сюда рендерится список стран-->
-           </div>
-
-    </div>
-   
-
-    
+    <!-- <form class="search-form" id="search-form">
+      <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
+    </form> -->
+            
+          <div >
+            <form class="search-form" id="search-form">
+              <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
+              <button type="submit">SEARCH</button>
+            </form>
+          </div>
+     
+          <div class="wrapper">
+                 <!-- сюда рендерится DOM-->
+          </div>
+          <button type="button" class="load-more-button">load more</button>
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
