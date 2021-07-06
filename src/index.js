@@ -10,16 +10,23 @@ const refs = {
     wrapper: document.querySelector('.wrapper'),
     searchForm: document.getElementById('search-form'),
     loadMoreBtn: document.querySelector('.load-more-button'),
-    gallery: document.querySelector('.images-gallery')
+    gallery: document.querySelector('.images-gallery'),
+    controlButton: document.querySelector('.control-button'),
+    resetButton: document.querySelector('.reset-button'),
+    input: document.getElementsByTagName('input')
 
 }
 
+console.log(refs.resetButton)
+console.log(refs.input)
+
 refs.searchForm.addEventListener('submit', onSubmit);
-refs.loadMoreBtn.addEventListener('click', onLoadMore)
+refs.loadMoreBtn.addEventListener('click', onLoadMore);
+refs.resetButton.addEventListener('click', onReset);
 
 let searchQuery =''
 let pageCounter = 1;
-refs.loadMoreBtn.style.display="none"
+refs.controlButton.style.display="none"
 
 async function onSubmit(element) {
     element.preventDefault();
@@ -36,12 +43,13 @@ async function onSubmit(element) {
     let resultList = await imageFetcher.fetchImages(searchQuery, pageCounter);
     clearGallery ()
     renderGallery(resultList)
-    refs.loadMoreBtn.style.display=""
+    refs.controlButton.style.display = ""
+    scrollToLoadMoreButton()
 }
 
 function clearGallery() {
     refs.wrapper.innerHTML = ''
-    refs.loadMoreBtn.style.display="none"
+    refs.controlButton.style.display="none"
  }
 function renderGallery(data) {
     const imagesGallery = imagesList(data)
@@ -55,13 +63,19 @@ async function onLoadMore() {
     let resultList = await imageFetcher.fetchImages(searchQuery, pageCounter)
     
     renderGallery(resultList)
-
-     refs.gallery.scrollIntoView({
-     behavior: 'smooth',
-     block: 'end',
-    });
+     scrollToLoadMoreButton()
     
 }
 
+function scrollToLoadMoreButton() {
+     
+     refs.loadMoreBtn.scrollIntoView({
+     behavior: 'smooth',
+     block: 'end',
+    });
+ }
 
-
+function onReset(element) {
+    clearGallery();
+    refs.input.query.value=''
+ }
